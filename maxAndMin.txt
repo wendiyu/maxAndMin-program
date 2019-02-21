@@ -1,0 +1,52 @@
+# Created by: Wendi Yu
+# Created on: Feb 21 2019
+# This program displays finding the max and min values in array
+
+from numpy import random
+
+numbers = []
+
+print("Generate 10 random number, then find out the max and min values:")
+ # generate 10 random numbers
+for number in range(10):
+    numbers.append(random.randint(1,99))
+    print (numbers[number])
+
+ # find the maximum value in array
+def maxValue(array):
+  
+    # the maximum value
+    arrayMax = array[0]
+    
+    for aValue in numbers:
+        if arrayMax == 0:
+            arrayMax = aValue
+        elif arrayMax < aValue :
+              arrayMax = aValue
+        else:
+          arrayMax = arrayMax
+          
+    return arrayMax
+
+# find the minmum value in array
+def minValue(array):
+  
+    # the minmum value
+    arrayMin = array[0]
+    
+    for aValue in numbers:
+        if arrayMin == 0:
+            arrayMin = aValue
+        elif arrayMin > aValue :
+              arrayMin = aValue
+        else:
+          arrayMin = arrayMin
+          
+    return arrayMin
+
+greatestValue = maxValue(numbers)
+smallestValue = minValue(numbers)
+print ("The max value is: " + str(greatestValue))
+print ("The min value is: " + str(smallestValue))
+
+input()
